@@ -3,12 +3,12 @@ require 'thread'
 require 'serialport'
 
 
-SERIAL_PORT = '/dev/tty.usbmodemfd111'
+# SERIAL_PORT = '/dev/tty.usbmodemfd111'
 SERIAL_BAUD = 9600
 SERIAL_DATA_BIT = 8
 SERIAL_STOP_BIT = 1
 
-sp = SerialPort.new(SERIAL_PORT, SERIAL_BAUD, SERIAL_DATA_BIT, SERIAL_STOP_BIT, SerialPort::NONE)
+sp = SerialPort.new(ARGV[1], SERIAL_BAUD, SERIAL_DATA_BIT, SERIAL_STOP_BIT, SerialPort::NONE)
 
 
 Signal.trap(:INT) {

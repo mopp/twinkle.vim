@@ -6,7 +6,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function! twinkle#start()
-    let s:connection = twinkle#pconnector#new('localhost', 14474, "ruby " . g:twinkle_ruby_file_path . " 14474")
+    let s:connection = twinkle#pconnector#new('localhost', 14474, "ruby " . g:twinkle_ruby_file_path . " 14474 " . g:twinkle_serial_path)
     call s:connection.start()
 endfunction
 
@@ -23,6 +23,7 @@ endfunction
 
 
 function! twinkle#stop()
+    call twinkle#send(0)
     call s:connection.stop()
 endfunction
 
