@@ -31,12 +31,6 @@ loop do
         data = s.gets
         data.each_char {|c| sp.write(c) }
         sp.write("\n")
-
-        # puts "start";
-        # puts s.gets;
-
-        # system("touch " + s.gets);
-
         s.close;
     end
 end

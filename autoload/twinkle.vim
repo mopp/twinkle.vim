@@ -5,11 +5,8 @@ endif
 let s:save_cpo = &cpo
 set cpo&vim
 
-
-let s:ruby_file_path = "/Users/mopp/Dropbox/Program/Vim/twinkle.vim/source/socket.rb"
-
 function! twinkle#start()
-    let s:connection = twinkle#pconnector#new('localhost', 14474, "ruby " . s:ruby_file_path . " 14474")
+    let s:connection = twinkle#pconnector#new('localhost', 14474, "ruby " . g:twinkle_ruby_file_path . " 14474")
     call s:connection.start()
 endfunction
 

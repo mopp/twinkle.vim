@@ -8,12 +8,18 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 
-augroup twinkle
-    autocmd!
-    autocmd VimEnter * call twinkle#start()
-    autocmd CursorMoved,CursorMovedI * call twinkle#send(getpos('.')[1])
-    autocmd VimLeavePre * call twinkle#stop()
-augroup END
+
+if exists('g:twinkle_ruby_file_path')
+    augroup twinkle
+        autocmd!
+        autocmd VimEnter * call twinkle#start()
+        autocmd CursorMoved,CursorMovedI * call twinkle#send(getpos('.')[1])
+        autocmd VimLeavePre * call twinkle#stop()
+    augroup END
+else
+    throw "Please set g:twinkle_ruby_file_path"
+endif
+
 
 
 let &cpo = s:save_cpo
