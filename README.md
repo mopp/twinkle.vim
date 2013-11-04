@@ -5,5 +5,5 @@
 ArduinoとVFD管(下の画像)が必要です
 
 
-# ScreenShot
+# VFD
 ![ss](./ss.jpg)
